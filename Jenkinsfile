@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'ubuntu:22.04'
+            args '-u root:root'
+        }
+    }
     stages {
         stage('Performance Testing') {
             steps {
