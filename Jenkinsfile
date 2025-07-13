@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'ubuntu:latest'
+            image 'ubuntu:22.04'
             args '-u root:root'
         }
     }
