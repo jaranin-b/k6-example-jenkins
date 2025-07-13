@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'grafana/k6:latest'
-        }
-    }
+    agent any
     stages {
         stage('Performance Testing') {
             steps {
