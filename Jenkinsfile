@@ -44,7 +44,8 @@ pipeline {
 
         stage('Run Performance Test') {
             steps {
-                sh '${K6_PATH} run loadtests/performance-test.js --out json=reports/results.json'
+                sh 'mkdir -p reports'
+                sh '${K6_PATH} run loadtests/performance-test.js --out json=reports/result.json'
             }
         }
 
