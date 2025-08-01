@@ -42,17 +42,17 @@ pipeline {
         //     }
         // }
 
-        stage('Run Performance Test') {
-            steps {
-                sh 'mkdir -p reports'
-                sh '${K6_PATH} run loadtests/performance-test.js --out json=reports/result.json'
-            }
-        }
-
         stage('Check K6') {
             steps {
                 sh 'echo $K6_PATH'
                 sh '$K6_PATH version'
+            }
+        }
+
+        stage('Run Performance Test') {
+            steps {
+                sh 'mkdir -p reports'
+                sh '${K6_PATH} run loadtests/performance-test.js --out json=reports/result.json'
             }
         }
     }
